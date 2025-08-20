@@ -14,7 +14,7 @@ const menuData = {
       name: "Truffle Scramble",
       desc: "Soft eggs, chives, shaved black truffle",
       tags: ["GF"],
-      price: "$24",
+      price: "LKR 2400",
       img: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=100&h=100&fit=crop&crop=center",
       isChefsPick: true,
     },
@@ -22,7 +22,7 @@ const menuData = {
       name: "Açaí & Gold Granola",
       desc: "Seasonal berries, honeycomb, toasted coconut",
       tags: ["V"],
-      price: "$18",
+      price: "LKR 1800",
       img: "https://images.unsplash.com/photo-1511690743698-d9d85f2fbf38?w=100&h=100&fit=crop&crop=center",
     },
   ],
@@ -31,7 +31,7 @@ const menuData = {
       name: "Lobster Bisque",
       desc: "Cognac cream, chive oil",
       tags: [],
-      price: "$22",
+      price: "LKR 2200",
       img: "https://images.unsplash.com/photo-1547592166-23ac45744acd?w=100&h=100&fit=crop&crop=center",
       isChefsPick: true,
     },
@@ -39,7 +39,7 @@ const menuData = {
       name: "Burrata & Heirloom Tomatoes",
       desc: "Basil oil, aged balsamic",
       tags: ["V", "GF"],
-      price: "$19",
+      price: "LKR 1900",
       img: "https://images.unsplash.com/photo-1608897013039-887f21d8c804?w=100&h=100&fit=crop&crop=center",
     },
   ],
@@ -48,7 +48,7 @@ const menuData = {
       name: "Wagyu Striploin (8oz)",
       desc: "Smoked salt, pommes purée, jus",
       tags: ["GF"],
-      price: "$68",
+      price: "LKR 6800",
       img: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=100&h=100&fit=crop&crop=center",
       isChefsPick: true,
     },
@@ -56,7 +56,7 @@ const menuData = {
       name: "Chilean Sea Bass",
       desc: "Champagne beurre blanc, asparagus",
       tags: ["GF"],
-      price: "$52",
+      price: "LKR 5200",
       img: "https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?w=100&h=100&fit=crop&crop=center",
     },
   ],
@@ -65,7 +65,7 @@ const menuData = {
       name: "Saffron Lobster Risotto",
       desc: "Carneroli rice, citrus zest",
       tags: ["GF"],
-      price: "$58",
+      price: "LKR 5800",
       img: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=100&h=100&fit=crop&crop=center",
       isChefsPick: true,
     },
@@ -75,14 +75,14 @@ const menuData = {
       name: "Valrhona Lava Cake",
       desc: "Espresso gelato",
       tags: [],
-      price: "$16",
+      price: "LKR 1600",
       img: "https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=100&h=100&fit=crop&crop=center",
     },
     {
       name: "Pistachio Panna Cotta",
       desc: "Rosewater, pistachio brittle",
       tags: ["GF"],
-      price: "$14",
+      price: "LKR 1400",
       img: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=100&h=100&fit=crop&crop=center",
       isChefsPick: true,
     },
@@ -92,14 +92,14 @@ const menuData = {
       name: "Single-Origin Pour Over",
       desc: "Roasted in-house",
       tags: [],
-      price: "$8",
+      price: "LKR 800",
       img: "https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?w=100&h=100&fit=crop&crop=center",
     },
     {
       name: "Matcha Latte",
       desc: "Ceremonial grade",
       tags: [],
-      price: "$9",
+      price: "LKR 900",
       img: "https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=100&h=100&fit=crop&crop=center",
     },
   ],
@@ -108,7 +108,7 @@ const menuData = {
       name: "Atha Gold Martini",
       desc: "Vodka, dry vermouth, citrus oils, edible gold",
       tags: [],
-      price: "$22",
+      price: "LKR 2200",
       img: "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=100&h=100&fit=crop&crop=center",
       isChefsPick: true,
     },
@@ -116,7 +116,7 @@ const menuData = {
       name: "Barrel-Aged Negroni",
       desc: "Gin, vermouth, Campari",
       tags: [],
-      price: "$20",
+      price: "LKR 2000",
       img: "https://images.unsplash.com/photo-1551538827-9c037cb4f32a?w=100&h=100&fit=crop&crop=center",
     },
   ],
@@ -347,9 +347,9 @@ export default function AthaResortMenu() {
             <div>
               <h4 className="font-semibold text-foreground mb-2">Address</h4>
               <p className="text-muted-foreground">
-                123 Resort Boulevard
+                No. 290/A , Airforce Road, Kibissa,
                 <br />
-                Paradise Valley, PV 12345
+                Dambulla, 21120 Sigiriya, Sri Lanka
               </p>
             </div>
             <div>
@@ -363,15 +363,15 @@ export default function AthaResortMenu() {
             <div>
               <h4 className="font-semibold text-foreground mb-2">Contact</h4>
               <p className="text-muted-foreground">
-                Phone: (555) 123-4567
+                Phone:  +94 770 180 181
                 <br />
-                Email: dining@atharesort.com
+                Email: reservation@atharesort.com
               </p>
             </div>
           </div>
           <div className="mt-8 pt-6 border-t border-primary/20">
             <p className="text-muted-foreground text-xs">
-              © 2024 Atha Resort Restaurant. All rights reserved.
+              © 2025 Atha Resort Restaurant. All rights reserved.
             </p>
           </div>
         </div>
