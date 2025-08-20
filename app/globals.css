@@ -1,0 +1,387 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Enhanced color system with light/dark gold variants and richer gradients */
+  --background: oklch(0.04 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.04 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.75 0.15 85);
+  --primary-foreground: oklch(0.04 0 0);
+  --primary-light: oklch(0.85 0.12 85);
+  --primary-dark: oklch(0.65 0.18 85);
+  --secondary: oklch(0.15 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.75 0.02 0);
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: oklch(0.04 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.75 0.15 85 / 0.35);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.75 0.15 85);
+  --chart-1: oklch(0.75 0.15 85);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.625rem;
+  --sidebar: oklch(0.04 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.75 0.15 85);
+  --sidebar-primary-foreground: oklch(0.04 0 0);
+  --sidebar-accent: oklch(0.12 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.75 0.15 85 / 0.35);
+  --sidebar-ring: oklch(0.75 0.15 85);
+
+  /* Added font variables for easy swapping */
+  --font-display: var(--font-playfair);
+  --font-body: var(--font-inter);
+
+  /* Enhanced spacing scale */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Motion timing */
+  --motion-fast: 150ms;
+  --motion-normal: 200ms;
+  --motion-slow: 300ms;
+}
+
+.dark {
+  --background: oklch(0.04 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.08 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.04 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.75 0.15 85);
+  --primary-foreground: oklch(0.04 0 0);
+  --primary-light: oklch(0.85 0.12 85);
+  --primary-dark: oklch(0.65 0.18 85);
+  --secondary: oklch(0.15 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.12 0 0);
+  --muted-foreground: oklch(0.75 0.02 0);
+  --accent: oklch(0.75 0.15 85);
+  --accent-foreground: oklch(0.04 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.75 0.15 85 / 0.35);
+  --input: oklch(0.15 0 0);
+  --ring: oklch(0.75 0.15 85);
+  --chart-1: oklch(0.75 0.15 85);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.04 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.75 0.15 85);
+  --sidebar-primary-foreground: oklch(0.04 0 0);
+  --sidebar-accent: oklch(0.12 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.75 0.15 85 / 0.35);
+  --sidebar-ring: oklch(0.75 0.15 85);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-light: var(--primary-light);
+  --color-primary-dark: var(--primary-dark);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added font family mappings */
+  --font-sans: var(--font-body);
+  --font-serif: var(--font-display);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    /* Updated background to use new scenic elephant images */
+    background: linear-gradient(
+        to bottom,
+        oklch(0.02 0 0 / 0.95) 0%,
+        oklch(0.02 0 0 / 0.85) 20%,
+        oklch(0.02 0 0 / 0.75) 40%,
+        oklch(0.02 0 0 / 0.85) 60%,
+        oklch(0.02 0 0 / 0.95) 100%
+      ), url("/images/sigiriya-elephant.png"), url("/images/sunset-elephants.png");
+    background-size: cover, 50% auto, 50% auto;
+    background-position: center, left center, right center;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-attachment: fixed, fixed, fixed;
+  }
+
+  /* Enhanced focus states and animations */
+  .focus-visible {
+    @apply outline-2 outline-offset-2 outline-primary;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn var(--motion-normal) ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp var(--motion-normal) ease-out;
+  }
+
+  /* Added smooth premium animations for promo cards */
+  .animate-fade-slide {
+    animation: fadeSlide var(--motion-slow) ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Added premium fade and slide animation */
+  @keyframes fadeSlide {
+    from {
+      opacity: 0;
+      transform: translateX(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  /* Enhanced component styles */
+  .menu-item-image {
+    @apply rounded-lg border border-primary/50 transition-all duration-300 hover:border-primary hover:shadow-lg hover:shadow-primary/20;
+  }
+
+  .dietary-tag {
+    @apply inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/30 transition-colors duration-200;
+  }
+
+  .section-divider {
+    @apply border-t border-primary/35 my-8;
+  }
+
+  /* Enhanced category tabs */
+  .category-tab {
+    @apply relative px-6 py-3 rounded-full font-medium transition-all duration-200 focus-visible:outline-primary;
+  }
+
+  .category-tab.active {
+    @apply bg-primary text-primary-foreground shadow-lg;
+  }
+
+  .category-tab.active::after {
+    content: "";
+    @apply absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-0.5 bg-primary rounded-full;
+  }
+
+  .category-tab:not(.active) {
+    @apply border border-primary/30 text-foreground hover:bg-primary/10 hover:border-primary/50;
+  }
+
+  /* Enhanced promo strip with full-width inset design and glowing border */
+  .promo-strip {
+    @apply mx-4 rounded-xl border border-primary/50 shadow-2xl;
+    background: linear-gradient(135deg, oklch(0.65 0.18 85) 0%, oklch(0.75 0.15 85) 50%, oklch(0.02 0 0) 100%);
+    box-shadow: 0 0 20px oklch(0.75 0.15 85 / 0.3), inset 0 1px 0 oklch(0.85 0.12 85 / 0.5);
+  }
+
+  .promo-card {
+    @apply flex-shrink-0 px-6 py-4 text-center transition-all duration-300 hover:scale-105;
+  }
+
+  /* Enhanced promo card styles for desktop grid and mobile carousel */
+  .promo-cards-container {
+    @apply flex gap-4 overflow-x-auto;
+    /* Custom scrollbar hiding instead of scrollbar-hide utility */
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .promo-card-item {
+    @apply flex-shrink-0 bg-black/20 backdrop-blur-sm rounded-lg p-4 border border-primary/30 transition-all duration-300 hover:border-primary hover:bg-black/30;
+    min-width: 280px;
+  }
+
+  @media (min-width: 768px) {
+    .promo-card-item {
+      @apply min-w-0;
+    }
+  }
+
+  /* Chef's pick badge */
+  .chefs-pick-badge {
+    @apply absolute -top-2 -right-2 bg-primary text-primary-foreground text-xs font-bold px-2 py-1 rounded-full shadow-lg;
+  }
+
+  /* Enhanced reservation modal */
+  .reservation-modal {
+    @apply bg-card border border-primary/20 shadow-2xl;
+  }
+
+  .reservation-title {
+    @apply font-serif text-3xl font-bold text-primary mb-2;
+  }
+
+  .form-field {
+    @apply space-y-2;
+  }
+
+  .form-label {
+    @apply text-sm font-medium text-foreground;
+  }
+
+  .form-input {
+    @apply w-full px-3 py-2 bg-input border border-border rounded-md focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200;
+  }
+
+  .form-input:invalid {
+    @apply border-destructive focus:ring-destructive;
+  }
+
+  .form-error {
+    @apply text-xs text-destructive mt-1;
+  }
+
+  /* Enhanced elephant background sections with smoother edge gradients */
+  .elephant-section {
+    @apply relative rounded-lg overflow-hidden my-8;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .elephant-section::before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+        to right,
+        oklch(0.02 0 0 / 0.9) 0%,
+        oklch(0.02 0 0 / 0.7) 15%,
+        oklch(0.02 0 0 / 0.4) 30%,
+        oklch(0.02 0 0 / 0.4) 70%,
+        oklch(0.02 0 0 / 0.7) 85%,
+        oklch(0.02 0 0 / 0.9) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        oklch(0.02 0 0 / 0.8) 0%,
+        oklch(0.02 0 0 / 0.3) 20%,
+        oklch(0.02 0 0 / 0.2) 50%,
+        oklch(0.02 0 0 / 0.3) 80%,
+        oklch(0.02 0 0 / 0.8) 100%
+      );
+  }
+
+  .elephant-section .relative {
+    @apply z-10;
+  }
+
+  .elephant-section h2 {
+    @apply text-shadow-lg;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  /* Added styles for contact and footer sections with same background treatment */
+  .contact-section,
+  .footer-section {
+    @apply relative;
+    background-image: url("/images/sunset-elephants.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .contact-section::before,
+  .footer-section::before {
+    content: "";
+    @apply absolute inset-0 pointer-events-none;
+    background: linear-gradient(
+        to right,
+        oklch(0.02 0 0 / 0.95) 0%,
+        oklch(0.02 0 0 / 0.8) 15%,
+        oklch(0.02 0 0 / 0.6) 30%,
+        oklch(0.02 0 0 / 0.6) 70%,
+        oklch(0.02 0 0 / 0.8) 85%,
+        oklch(0.02 0 0 / 0.95) 100%
+      ),
+      linear-gradient(
+        to bottom,
+        oklch(0.02 0 0 / 0.9) 0%,
+        oklch(0.02 0 0 / 0.7) 20%,
+        oklch(0.02 0 0 / 0.5) 50%,
+        oklch(0.02 0 0 / 0.7) 80%,
+        oklch(0.02 0 0 / 0.9) 100%
+      );
+  }
+
+  .contact-section > *,
+  .footer-section > * {
+    @apply relative z-10;
+  }
+}
