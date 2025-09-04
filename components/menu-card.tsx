@@ -1,18 +1,25 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Star } from "lucide-react"
-import Image from "next/image"
+import { Card, CardContent } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Star } from "lucide-react";
+import Image from "next/image";
 
 interface MenuItemProps {
-  name: string
-  desc: string
-  tags: string[]
-  price: string
-  img?: string
-  isChefsPick?: boolean
+  name: string;
+  desc: string;
+  tags: string[];
+  price: string;
+  img?: string;
+  isChefsPick?: boolean;
 }
 
-export function MenuCard({ name, desc, tags, price, img, isChefsPick }: MenuItemProps) {
+export function MenuCard({
+  name,
+  desc,
+  tags,
+  price,
+  img,
+  isChefsPick,
+}: MenuItemProps) {
   return (
     <Card className="bg-card border-primary/20 hover:border-primary/40 transition-all duration-300 animate-slide-up relative group">
       {isChefsPick && (
@@ -33,13 +40,18 @@ export function MenuCard({ name, desc, tags, price, img, isChefsPick }: MenuItem
             />
           )}
           <div className="flex-1">
-            <div className="flex justify-between items-start mb-2">
+            <div className="flex justify-between items-start mb-2 flex-col lg:flex-row gap-1 lg:gap-0">
               <h3 className="font-serif text-lg font-semibold text-foreground group-hover:text-primary transition-colors duration-200">
                 {name}
               </h3>
-              <span className="font-sans text-lg font-bold text-primary ml-4 flex-shrink-0">{price}</span>
+              <span className="font-sans text-lg font-bold text-primary lg:ml-4">
+                {price}
+              </span>
             </div>
-            <p className="text-muted-foreground text-sm mb-3 leading-relaxed">{desc}</p>
+
+            <p className="text-muted-foreground text-sm mb-3 leading-relaxed">
+              {desc}
+            </p>
             {tags.length > 0 && (
               <div className="flex gap-2 flex-wrap">
                 {tags.map((tag) => (
@@ -53,5 +65,5 @@ export function MenuCard({ name, desc, tags, price, img, isChefsPick }: MenuItem
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }

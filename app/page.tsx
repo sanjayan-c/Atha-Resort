@@ -220,57 +220,33 @@ export default function AthaResortMenu() {
       />
 
       {/* Menu Sections */}
-      <main className="container mx-auto px-4 py-8">
+      <main>
         {categories.map((category, categoryIndex) => (
           <section
             key={category}
             id={category.toLowerCase().replace(/\s+/g, "-")}
-            className="mb-16"
+            className="mb-16 relative overflow-visible"
           >
-            <div
-              className={`relative ${
-                categoryIndex % 3 === 1 ? "elephant-section" : ""
-              }`}
-            >
-              {categoryIndex % 3 === 1 && (
-                <>
-                  <div className="absolute inset-0 z-0 rounded-lg overflow-hidden">
-                    <Image
-                      src={
-                        categoryIndex % 6 === 1
-                          ? "/images/sigiriya-elephant.png"
-                          : "/images/sunset-elephants.png"
-                      }
-                      alt="Elephant Background"
-                      fill
-                      className="object-cover opacity-20"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
-                  </div>
-                  <div className="relative z-10">
-                    <h2 className="font-serif text-3xl font-bold text-primary mb-8 tracking-wide animate-slide-up">
-                      {category}
-                    </h2>
-                    <div className="grid gap-6 md:grid-cols-2">
-                      {menuData[category as keyof typeof menuData].map(
-                        (item, index) => (
-                          <MenuCard
-                            key={index}
-                            name={item.name}
-                            desc={item.desc}
-                            tags={item.tags}
-                            price={item.price}
-                            img={item.img}
-                            isChefsPick={item.isChefsPick}
-                          />
-                        )
-                      )}
-                    </div>
-                  </div>
-                </>
-              )}
-              {categoryIndex % 3 !== 1 && (
-                <>
+            {/* BG section */}
+            {categoryIndex % 3 === 1 ? (
+              <>
+                {/* Full-bleed background */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-screen h-full z-0">
+                  <Image
+                    src={
+                      categoryIndex % 6 === 1
+                        ? "/images/sigiriya-elephant.png"
+                        : "/images/sunset-elephants.png"
+                    }
+                    alt="Elephant Background"
+                    fill
+                    className="object-cover opacity-20"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
+                </div>
+
+                {/* Content with standard padding */}
+                <div className="relative z-10 container mx-auto px-4 py-8">
                   <h2 className="font-serif text-3xl font-bold text-primary mb-8 tracking-wide animate-slide-up">
                     {category}
                   </h2>
@@ -289,30 +265,56 @@ export default function AthaResortMenu() {
                       )
                     )}
                   </div>
-                </>
-              )}
-            </div>
+                </div>
+              </>
+            ) : (
+              /* Non-BG section — same padding wrapper */
+              <div className="container mx-auto px-4 py-8">
+                <h2 className="font-serif text-3xl font-bold text-primary mb-8 tracking-wide animate-slide-up">
+                  {category}
+                </h2>
+                <div className="grid gap-6 md:grid-cols-2">
+                  {menuData[category as keyof typeof menuData].map(
+                    (item, index) => (
+                      <MenuCard
+                        key={index}
+                        name={item.name}
+                        desc={item.desc}
+                        tags={item.tags}
+                        price={item.price}
+                        img={item.img}
+                        isChefsPick={item.isChefsPick}
+                      />
+                    )
+                  )}
+                </div>
+              </div>
+            )}
+
             {category !== categories[categories.length - 1] && (
               <div className="section-divider" />
             )}
           </section>
         ))}
-        {/* Dietary Information */}
-        <section className="mt-16 p-6 bg-card/50 rounded-lg border border-primary/20 animate-slide-up">
-          <h3 className="font-serif text-xl font-semibold text-primary mb-4">
-            Dietary Information
-          </h3>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
-            {Object.entries(dietaryTags).map(([tag, description]) => (
-              <div key={tag} className="flex items-center gap-2">
-                <Badge variant="outline" className="dietary-tag">
-                  {tag}
-                </Badge>
-                <span className="text-sm text-muted-foreground">
-                  {description}
-                </span>
-              </div>
-            ))}
+
+        {/* Dietary Information (keeps container/padding locally) */}
+        <section className="mt-16">
+          <div className="container mx-auto px-4 py-8 bg-card/50 rounded-lg border border-primary/20 animate-slide-up">
+            <h3 className="font-serif text-xl font-semibold text-primary mb-4">
+              Dietary Information
+            </h3>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-3">
+              {Object.entries(dietaryTags).map(([tag, description]) => (
+                <div key={tag} className="flex items-center gap-2">
+                  <Badge variant="outline" className="dietary-tag">
+                    {tag}
+                  </Badge>
+                  <span className="text-sm text-muted-foreground">
+                    {description}
+                  </span>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
       </main>
@@ -363,7 +365,7 @@ export default function AthaResortMenu() {
             <div>
               <h4 className="font-semibold text-foreground mb-2">Contact</h4>
               <p className="text-muted-foreground">
-                Phone:  +94 770 180 181
+                Phone: +94 770 180 181
                 <br />
                 Email: reservation@atharesort.com
               </p>
