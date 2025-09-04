@@ -82,9 +82,9 @@ export function ReservationModal() {
     // <Dialog open={isOpen} onOpenChange={setIsOpen}>
     <Dialog open={false}>
       <DialogTrigger asChild>
-        <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 font-medium">
+        {/* <Button className="bg-primary text-primary-foreground hover:bg-primary/90 px-6 py-2 font-medium">
           Reserve a Table
-        </Button>
+        </Button> */}
       </DialogTrigger>
       <DialogContent className="reservation-modal max-w-md">
         <DialogHeader className="text-center pb-4">

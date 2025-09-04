@@ -247,7 +247,7 @@ export default function AthaResortMenu() {
                     />
                     <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-black/60" />
                   </div>
-                  <div className="relative z-10 p-8">
+                  <div className="relative z-10">
                     <h2 className="font-serif text-3xl font-bold text-primary mb-8 tracking-wide animate-slide-up">
                       {category}
                     </h2>
